@@ -36,7 +36,6 @@ inputDate.required = true;
 
 
 diaryTextLabel.setAttribute('for', 'diaryText');
-diaryTextLabel.innerText = 'Text';
 
 diaryText.setAttribute('type', 'text');
 diaryText.setAttribute('name', 'diaryText');
@@ -55,3 +54,42 @@ diaryForm.appendChild(diaryText);
 diaryForm.appendChild(saveBtn);
 
 writeDiv.appendChild(diaryForm);
+
+// ------------------- Array for posts -------------------
+let diaryPosts = []
+
+if (localStorage.getItem("savedDiaryPosts") == null){
+  localStorage.setItem("savedDiaryPosts", JSON.stringify(diaryPosts));
+  console.log("array finns ej");
+}
+// ---------------------- Save posts ----------------------
+
+function savePost(inputDate, diaryText){
+  let localDiaryPost = JSON.parse(localStorage.getItem("savedDiaryPosts"))
+  let post = {date: inputDate, text: diaryText}
+  localDiaryPost.push(post);
+  console.log(localDiaryPost);
+
+  localStorage.setItem("savedDiaryPosts", JSON.stringify(localDiaryPost));
+}
+
+// --------------------- saveBtn ---------------------
+saveBtn.addEventListener("click", function(){
+  console.log(diaryPosts);
+  savePost(inputDate.value, diaryText.value)
+
+  printDiary();
+});
+
+
+// -------------------- Print diary --------------------
+function printDiary(){
+  let localDiaryPost = JSON.parse(localStorage.getItem("savedDiaryPosts"))
+
+  for (post in localDiaryPost){
+    console.log(localDiaryPost[post].date);
+    console.log(localDiaryPost[post].text);
+  }
+}
+
+printDiary();
