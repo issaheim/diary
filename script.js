@@ -93,8 +93,8 @@ function savePost(inputDate, diaryText){
 saveBtn.addEventListener("click", function(){
   console.log(diaryPosts);
   savePost(inputDate.value, diaryText.value)
-  inputDate.innerHTML = '';
-  diaryText.innerHTML = '';
+  inputDate.value = '';
+  diaryText.value = '';
 
   printDiary();
 });
