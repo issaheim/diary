@@ -1,0 +1,86 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 300;
+}
+
+h1{
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 45px;
+}
+
+
+main{
+  width: 100%;
+}
+
+#writeDiv{
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 300;
+  font-size: 1rem;
+}
+#inputDate{
+  max-width: 150px;
+  padding: 3px;
+  margin-bottom: 10px;
+}
+#dateLabel{
+  margin-right: 10px;
+}
+#diaryText{
+  display: block;
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+#saveBtn{
+  padding: 5px 10px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+}
+
+#savedDiaryPost{
+  max-width: 600px;
+  padding: 10px;
+  border: 0.3px solid black;
+  border-top: 0;
+}
+ul{
+  list-style-type: none;
+  width: 100%;
+  border-top: 1px solid black;
+}
+li{
+  border-top: 0;
+}
+
+@media only screen and (min-width: 700px){
+  main{
+    display: flex;
+    justify-content: center;
+  }
+
+  #writeDiv{
+    margin-right: 30px;
+  }
+}
+
+
+
