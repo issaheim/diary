@@ -10,7 +10,7 @@ const saveBtn = document.createElement('input');
 // -------------------- HEADER --------------------
 const header = document.createElement("header");
 const diaryTitle = document.createElement("h1");
-diaryTitle.innerHTML = "My diary";
+diaryTitle.innerHTML = "Dagboken.";
 
 const date = new Date();
 
@@ -48,8 +48,6 @@ inputDate.required = true;
 diaryTextLabel.setAttribute('for', 'diaryText');
 
 diaryText.setAttribute('type', 'text');
-// diaryText.setAttribute('rows', "10");
-// diaryText.setAttribute('cols', "35");
 diaryText.setAttribute('name', 'diaryText');
 diaryText.setAttribute('id', 'diaryText');
 diaryText.setAttribute('placeholder', 'Text');
@@ -105,8 +103,10 @@ main.appendChild(diaryDiv);
 let diaryPostList = document.createElement("ul");
 diaryDiv.appendChild(diaryPostList);
 
+let localDiaryPost;
+
 function printDiary(){
-  let localDiaryPost = JSON.parse(localStorage.getItem("savedDiaryPosts"));
+  localDiaryPost= JSON.parse(localStorage.getItem("savedDiaryPosts"));
   
   diaryPostList.innerHTML = "";
 
